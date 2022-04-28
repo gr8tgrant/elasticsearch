@@ -6,11 +6,11 @@ resource "aws_security_group" "my_private_sg" {
 
   # INBOUND CONNECTIONS
   ingress {
-    description     = "allowd ssh"
+    description     = "allow ssh to specific IPs"
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["24.125.48.119/32"]
 
   }
 
@@ -18,6 +18,24 @@ resource "aws_security_group" "my_private_sg" {
     description     = "For connection to Kibana"
     from_port       = 5601
     to_port         = 5601
+    protocol        = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+  ingress {
+    description     = "For connection to ElasticSearch"
+    from_port       = 5601
+    to_port         = 5601
+    protocol        = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+  ingress {
+    description     = "For connection to Nginx Proxy"
+    from_port       = 80
+    to_port         = 80
     protocol        = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 

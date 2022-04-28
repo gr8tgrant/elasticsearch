@@ -1,4 +1,4 @@
-resource "aws_instance" "kibana" {
+resource "aws_instance" "elk" {
     ami = data.aws_ami.ubuntu_image.id
     instance_type = var.ec2_type
     subnet_id = data.aws_subnet.private.id
