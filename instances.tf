@@ -8,6 +8,6 @@ resource "aws_instance" "elk" {
     
 
     tags = {
-    Name = "ELK Server"
+    Name = "ElasticSearchServer"
   }
 }

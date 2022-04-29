@@ -10,36 +10,19 @@ resource "aws_security_group" "my_private_sg" {
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
-    cidr_blocks = ["24.125.48.119/32"]
-
-  }
-
-  ingress {
-    description     = "For connection to Kibana"
-    from_port       = 5601
-    to_port         = 5601
-    protocol        = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 
   }
 
   ingress {
-    description     = "For connection to ElasticSearch"
-    from_port       = 5601
-    to_port         = 5601
+    description     = "For connection to ElasticSearch Server"
+    from_port       = 9200
+    to_port         = 9200
     protocol        = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
 
   }
 
-  ingress {
-    description     = "For connection to Nginx Proxy"
-    from_port       = 80
-    to_port         = 80
-    protocol        = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-
-  }
 
   egress {
     description = "Allow access to the world"
