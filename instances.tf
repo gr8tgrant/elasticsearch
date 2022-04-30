@@ -4,7 +4,7 @@ resource "aws_instance" "elk" {
     subnet_id = data.aws_subnet.private.id
     vpc_security_group_ids = [aws_security_group.my_private_sg.id]
     key_name               = var.my_keypair
-    availability_zone = var.az2
+    availability_zone = "us-east-2a"
     
 
     tags = {
