@@ -29,3 +29,8 @@ variable "private_subnet_name" {
 variable "my_keypair" {
     default = "aws_keypair"
 }
+
+variable "az2" {
+  type = string
+  default = "us-east-2a"
+}
