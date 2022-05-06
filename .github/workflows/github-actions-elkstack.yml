@@ -1,4 +1,4 @@
-name: "Elkstack Setup"
+name: "Elkstack Setup by kevin"
 on: [push]
 jobs:
   build-rks:
